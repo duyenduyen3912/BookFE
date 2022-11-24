@@ -1,0 +1,40 @@
+
+.btn-custom {
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 8px 10px;
+    border: 1px solid #f4a7bb;
+    border-radius: 2px;
+    background-color: black;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.btn-custom:hover{
+    color: #f4a7bb;
+}
+
+.modal{
+    background-color: transparent;
+    overflow: hidden;
+    
+}
+.modal-wrapper{
+    border: 1px solid #f4a7bb;
+   
+}
+
+.modal-header{
+    border: none !important;
+}
+
+.modal-body{
+    background-color: black;
+    color: #f4a7bb;
+    border: none !important;
+}
+
+.modal-btn {
+    background-color: black;
+    border: none !important;
+}
