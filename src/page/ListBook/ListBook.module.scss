@@ -6,6 +6,8 @@
 .wrapper{
     text-align: center;
     padding: 20px 0;
+    background-color: black;
+    min-height: 609px;
 }
 
 .table-row{
@@ -48,6 +50,10 @@ td {
 .table-body{
     color: #f4a7bb;
     
+}
+
+.detail{
+    text-align: justify;
 }
 
 

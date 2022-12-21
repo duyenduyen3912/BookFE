@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background-color: black;
+    min-height: 609px;
+}
+
+.container{
+    padding: 0 14px;
+}
+
+.new-book{
+    margin-top: 14px;
+    padding: 14px 30px;
+}
+
+.title{
+    text-align: center;
+    font-size: 2.6rem;
+    font-family: "RomanticAustineDemo" !important;
+    color: #f4a7bb;
+    
+}
+
+.new-book-wrap{
+    display: flex !important;
+    position: relative;
+    padding: 14px 10%;
+    align-items: center;
+    justify-content: space-between;
+    color: #f4a7bb;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, rgb(11, 11, 11) , #755960);
+}
+
+.new-book-detail{
+    flex: 1;
+
+}
+
+.new-book-detail-name{
+    flex: 1;
+    font-size: 2.4rem;
+}
+
+.new-book-detail-author{
+    margin-top: 14px;
+    font-size: 1.5rem;
+}
+
+.new-book-detail-text{
+    margin-top: 14px;
+}
+
+.new-book-image{
+    display: flex;
+    flex: 1;
+    justify-content: end;
+}
+
+.book-image{
+    width: 50%;
+    border-radius: 10px;
+}
+
+.button-wrap{
+    width: 95% !important;
+    position: absolute;
+    display: flex !important;
+    justify-content: space-between ;
+    z-index: 1;
+    color: #f4a7bb;
+    transform: translateY(-220px);
+    padding: 0 4px;
+    // transform: translateY(-400px);
+    
+}
+
+.button-slide{
+    
+    background-color: transparent;
+    color: aliceblue;
+    border: none;
+    font-size: 1.5rem;
+    padding: 8px;
+}
+
+.button-slide:hover {
+    color: #f1648a;
+}
+
+.books{
+    margin-top: 14px;
+    padding: 14px 30px;
+}
+
+.list-book-wrap{
+    
+}
+
+.list-category{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-category-item{
+    text-decoration: none;
+    color: #f4a7bb;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.list-category-item:hover{
+    color: #f1648a;
+    transform: translateY(-3px);
+}
+
+// .list-category-active{
+//     color: #f1648a;
+//     transform: translateY(-3px);
+// }
+
+
+
+
+
+

@@ -13,13 +13,13 @@ function Detail(props) {
   const params = useParams();
   const [click, setClick] = useState(0);
   const [validated, setValidated] = useState(false);
-  const [imageSelected, setImageSelected] = useState("");
   const [book, setBook] = useState({});
   const navigate = useNavigate();
-  const id = params.id;
-  let stringUpdate = "http://localhost:8080/book/update/" + id;
+  const idBook = params.idBook;
+  console.log(idBook);
+  let stringUpdate = "http://localhost:8080/book/update/" + idBook;
   let stringAdd = "http://localhost:8080/book/addBook/" + book.name;
-  console.log(book.image);
+
   const deleteImge = () => {
     setBook({ ...book, image: null });
   };
@@ -41,9 +41,10 @@ function Detail(props) {
     document.getElementById("button").innerHTML = "Save";
     setClick(click + 1);
   };
-
   const onAddClick = () => {
-    if (validated) {
+    setValidated(true);
+    const form = document.getElementById("submitForm");
+    if (form.checkValidity() === true) {
       fetch(stringAdd, {
         method: "post",
         mode: "cors",
@@ -65,32 +66,36 @@ function Detail(props) {
   };
   useEffect(() => {
     if (click > 1) {
-      fetch(stringUpdate, {
-        method: "post",
-        mode: "cors",
-        body: JSON.stringify({ ...book, id: id }),
-        headers: {
-          "Content-type": "application/json",
-        },
-      })
-        .then((res) => res.json())
+      setValidated(true);
+      const form = document.getElementById("submitForm");
+      if (form.checkValidity() === true) {
+        fetch(stringUpdate, {
+          method: "post",
+          mode: "cors",
+          body: JSON.stringify({ ...book, idBook: idBook }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((res) => res.json())
 
-        .then((data) => {
-          if (data.response === "successUpdate") navigate("/");
-          else {
-            alert("Update không thành công");
-          }
-        });
+          .then((data) => {
+            if (data.response === "successUpdate") navigate("/");
+            else {
+              alert("Update không thành công");
+            }
+          });
+      }
     }
   }, [click]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/book/${id}`)
+    fetch(`http://localhost:8080/book/${idBook}`)
       .then((response) => response.json())
       .then((data) => setBook(data))
       .catch((err) => console.log(err));
 
-    if (id > 0) {
+    if (idBook > 0) {
       const element = document.getElementsByClassName("ip");
       for (let i = 0; i < element.length; i++) {
         document.getElementsByClassName("ip")[i].disabled = true;
@@ -101,7 +106,7 @@ function Detail(props) {
     <div className={cx("wrapper")}>
       <div className={cx("detail")}>
         <div className={cx("title")}>
-          {id < 0 ? "New Book" : ` ${book.name}`}
+          {idBook < 0 ? "New Book" : ` ${book.name}`}
         </div>
         <Form
           className="form-Detail"
@@ -125,7 +130,6 @@ function Detail(props) {
                     id="name"
                     name="name"
                     onChange={(e) => {
-                      console.log(e.target.value);
                       setBook({ ...book, name: e.target.value });
                     }}
                   />
@@ -143,7 +147,6 @@ function Detail(props) {
                     id="author"
                     name="author"
                     onChange={(e) => {
-                      console.log(e.target.value);
                       setBook({ ...book, author: e.target.value });
                     }}
                   />
@@ -179,7 +182,6 @@ function Detail(props) {
                     id="date"
                     name="date"
                     onChange={(e) => {
-                      console.log(e.target.value);
                       setBook({ ...book, date: e.target.value });
                     }}
                   />
@@ -197,7 +199,7 @@ function Detail(props) {
                     type="number"
                     name="pagenumber"
                     value={book.pagenumber}
-                    className={cx("input-text", "input-number", "ip")}
+                    className={cx("input-text", "ip")}
                     onChange={(e) =>
                       setBook({ ...book, pagenumber: e.target.value })
                     }
@@ -205,33 +207,59 @@ function Detail(props) {
                 </div>
               </div>
               <br />
-              <label for="category" className={cx("label-item")}>
-                Category
-              </label>
-              <br />
-              <select
-                id="category"
-                name="category"
-                className={cx("select-item", "ip")}
-                value={book.category}
-                onChange={(e) => setBook({ ...book, category: e.target.value })}
-              >
-                <option value="adventure" className={cx("option-item")}>
-                  Action and adventure
-                </option>
-                <option value="art" className={cx("option-item")}>
-                  Art
-                </option>
-                <option value="comics" className={cx("option-item")}>
-                  Comics
-                </option>
-                <option value="history" className={cx("option-item")}>
-                  History
-                </option>
-                <option value="romance" className={cx("option-item")}>
-                  Romance
-                </option>
-              </select>
+              <div className={cx("name-wrap")}>
+                <div>
+                  <label for="category" className={cx("label-item")}>
+                    Category
+                  </label>
+
+                  <br />
+                  <select
+                    id="category"
+                    name="category"
+                    className={cx("select-item", "ip", "input-text")}
+                    value={book.category}
+                    onChange={(e) =>
+                      setBook({ ...book, category: e.target.value })
+                    }
+                  >
+                    <option className={cx("option-item")}></option>
+                    <option value="Action" className={cx("option-item")}>
+                      Action
+                    </option>
+                    <option value="Art" className={cx("option-item")}>
+                      Art
+                    </option>
+                    <option value="Comics" className={cx("option-item")}>
+                      Comics
+                    </option>
+                    <option value="History" className={cx("option-item")}>
+                      History
+                    </option>
+                    <option value="Romance" className={cx("option-item")}>
+                      Romance
+                    </option>
+                  </select>
+                </div>
+
+                <Form.Group controlId="validationCustom01">
+                  <Form.Label className={cx("label-item")}>Price*</Form.Label>
+                  <Form.Control
+                    className={cx("input-text", "ip")}
+                    required
+                    type="text"
+                    value={book.price}
+                    id="price"
+                    name="price"
+                    onChange={(e) => {
+                      setBook({ ...book, price: e.target.value });
+                    }}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a valid Price.
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </div>
             </div>
 
             <div className={cx("book-image")}>
@@ -274,12 +302,12 @@ function Detail(props) {
           </div>
           <div className={cx("btn-wrapper")}>
             <button
-              onClick={id < 0 ? onAddClick : onEditClick}
+              onClick={idBook < 0 ? onAddClick : onEditClick}
               className={cx("btn-custom", "footer-btn")}
               id="button"
             >
               {" "}
-              {id < 0 ? "Add" : "Edit"}
+              {idBook < 0 ? "Add" : "Edit"}
             </button>
           </div>
         </Form>

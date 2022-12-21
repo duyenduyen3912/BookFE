@@ -6,18 +6,18 @@ import styles from "./Button.module.scss";
 
 const cx = classNames.bind(styles);
 
-function ActButton({ id }) {
+function ActButton({ idBook }) {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleClick = (id) => {
-    navigate(`/book/${id}`);
+  const handleClick = (idBook) => {
+    navigate(`/book/${idBook}`);
   };
 
-  const handleDelete = (id) => {
-    fetch(`http://localhost:8080/book/delete/${id}`).then((response) =>
+  const handleDelete = (idBook) => {
+    fetch(`http://localhost:8080/book/delete/${idBook}`).then((response) =>
       console.log(response)
     );
     setShow(false);
@@ -26,7 +26,7 @@ function ActButton({ id }) {
 
   return (
     <>
-      <button className={cx("btn-custom")} onClick={() => handleClick(id)}>
+      <button className={cx("btn-custom")} onClick={() => handleClick(idBook)}>
         View
       </button>
 
@@ -46,7 +46,7 @@ function ActButton({ id }) {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body className={cx("modal-body")}>
-            Do you wannt to delete this book?
+            Do you wannt to delete this book {idBook} ?
           </Modal.Body>
           <Modal.Footer className={cx("modal-btn")}>
             <button
@@ -58,7 +58,7 @@ function ActButton({ id }) {
             </button>
             <button
               variant="primary"
-              onClick={() => handleDelete(id)}
+              onClick={() => handleDelete(idBook)}
               className={cx("btn-custom")}
             >
               Delete
@@ -66,28 +66,6 @@ function ActButton({ id }) {
           </Modal.Footer>
         </div>
       </Modal>
-
-      {/* <button className={cx("btn-custom")} onClick={handleShow}>
-        Delete
-      </button> */}
-      {/* 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Body className={cx("modal")}>Bạn có muốn xóa không? </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button
-            variant="danger"
-            onClick={() => {
-              console.log(id);
-              handleDelete(id);
-            }}
-          >
-            Delete
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
     </>
   );
 }

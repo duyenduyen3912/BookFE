@@ -1,13 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Login from "./page/Login/Login";
-import Signup from "./page/Signup/Signup";
+import Login from "./page/Login/index";
 import ListBook from "./page/ListBook/ListBook";
 import Detail from "./page/Detail/Detail";
-import { Navigate, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-
+import Signup from "./page/Signup";
+import Home from "./page/Home";
+import BookDetail from "./page/BookDetail/BookDetail";
+import Cart from "./page/BookCart/Cart";
+import Order from "./page/BookOrder/Order";
+import Loader from "./component/Loader";
+import { useState, CSSProperties, useEffect } from "react";
+import UserInfor from "./page/UserInfor";
 function App() {
   return (
     <>
@@ -15,8 +18,15 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<ListBook />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/book/:id" element={<Detail />} />
-
+        <Route path="/book/:idBook" element={<Detail />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/book-detail/:id" element={<BookDetail />} />
+        <Route path="/book-cart" element={<Cart />} />
+        <Route path="/book-order" element={<Order />} />
+        <Route
+          path="/user-infor/:username"
+          element={localStorage.getItem("username") ? <UserInfor /> : <Login />}
+        />
         {/* <Route path="/laptops/${id}" element={<Laptop />} /> */}
       </Routes>
     </>
