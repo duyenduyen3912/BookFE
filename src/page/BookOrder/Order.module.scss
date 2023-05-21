@@ -1,0 +1,150 @@
+.wrapper {
+    background-color: black;
+    min-height: 609px;
+}
+
+.container{
+    padding: 40px;
+}
+.order-title{
+    text-align: center;
+    font-size: 2.6rem;
+    font-family: "RomanticAustineDemo" !important;
+    color: #f4a7bb;
+
+}
+
+.order-wrap{
+    margin: 14px 24%;
+    padding: 14px;
+    border: 1px solid #f4a7bb;
+    border-radius: 20px;
+}
+
+
+.order-user-infor{
+    text-align: center;
+   
+}
+.order-user-infor-item{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    color: #f4a7bb;
+   overflow: hidden;
+    padding: 0 10% 8px 10%;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 16px;
+    
+}
+
+.order-user-infor-left{
+    width: 30%;
+    text-align: start;
+}
+
+.order-user-infor-right{
+    width: 70%;
+    text-align: start;
+    font-weight: 400;
+}
+
+.order-item-title{
+    color: #f4a7bb;
+    border-bottom: 1px solid #f4a7bb;
+    font-size: 0.7rem;
+    padding: 4px 0;
+}
+.order-btn-wrap{
+    margin-top: 14px;
+    text-align: center;
+}
+
+.order-btn {
+    border: 1px solid #f4a7bb;
+    background-color: transparent;
+    padding: 8px 10px;
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+.order-btn:hover{
+    background-color: #f4a7bb;
+    color: black;
+}
+
+
+
+.order-item-wrap{
+    margin-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f4a7bb;
+}
+
+.order-item{
+    display: flex;
+    padding: 0 6%;
+}
+
+.order-item-img-wrap{
+    width: 10%;
+}
+
+.order-item-img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.order-item-detail{
+    margin-left: 20px;
+}
+
+.order-item-name{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f1648a;
+    cursor: pointer;
+}
+
+.order-item-price{
+    font-size: 0.9rem;
+    color: #f4a7bb;
+}
+
+.order-item-amount{
+    font-size: 0.8rem;
+    color: #f4a7bb;
+}
+
+.order-item-amount-number{
+
+}
+
+.order-item-total{
+    margin-top: 8px;
+    display: flex;
+    justify-content: end;
+    align-items: center !important;
+    padding: 0 6%;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f4a7bb;
+}
+
+.order-item-total-amount{
+    margin-left: 4px;
+    color: #f1648a;
+}
+
+.order-total-icon{
+    color: #f1648a;
+    font-size: 0.7rem;
+    
+    margin-left: 4px;
+}
+
+.order-item-total-wrap{
+    margin-top: 14px;
+}
+

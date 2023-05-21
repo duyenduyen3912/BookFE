@@ -1,0 +1,218 @@
+
+
+*{
+    
+}
+.wrapper {
+    background-color: black;
+    min-height: 609px;
+}
+
+.container{
+    padding: 40px;
+}
+
+.cart{
+
+}
+
+.cart-title{
+    text-align: center;
+    font-size: 2.6rem;
+    font-family: "RomanticAustineDemo" !important;
+    color: #f4a7bb;
+
+}
+
+.cart-icon {
+    font-size: 2rem ;
+    margin-right: 8px;
+}
+
+.cart-name{
+
+}
+
+.cart-amount{
+    text-align: center;
+    color: #f4a7bb;
+    font-size: 1rem;
+    transform: translateY(-14px);
+}
+
+.cart-total-amount{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.cart-total-amount-icon{
+    color: #f1648a;
+    margin-left: 4px;
+}
+
+.cart-list{
+    padding: 0 18%;
+}
+
+.cart-item{
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f4a7bb;
+    border-radius: 10px;
+    box-shadow: 5px 10px 5px rgba(243, 213, 221, 0.2);
+}
+
+.cart-item:hover{
+    scale: 1.05;
+    transition: linear 0.15s;
+}
+
+.cart-img-wrap{
+    width: 8%;
+   
+}
+
+.cart-img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.cart-detail-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-name-wrap{
+    margin-left: 20px;
+}
+
+.cart-name-title{
+    text-align: start;
+    font-size: 1rem;
+    min-width: 340px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cart-name-title:hover{
+    color: #f1648a;
+}
+
+.cart-name-price{
+    text-align: start;
+    font-size: 0.9rem;
+}
+
+.cart-orderNumber{
+//    margin-left: 30%;
+    
+}
+
+.cart-orderNumber-input{
+    width: 30%;
+    background-color: transparent;
+    outline: none;
+    // border: 2px solid #f1648a;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.cart-orderTotal-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cart-total-price{
+    font-weight: 600;
+    font-size: 1rem;
+    color: #f1648a;
+}
+
+.cart-delete{
+    color: #f1648a;
+    font-size: 1rem;
+    margin-left: 8px;
+}
+
+.cart-delete:hover{
+    color: #e8003e;
+}
+
+.cart-total{
+    color: #f4a7bb;
+    text-align: end;
+}
+
+.cart-total-amount-price {
+    color: #f1648a;
+    font-weight: 600;
+    margin-left: 14px;
+}
+
+.cart-infor{
+    margin-top: 24px;
+    margin: 0 18%;
+    border-bottom: 1px solid #f4a7bb;
+    
+}
+
+.cart-infor-title{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f4a7bb;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f4a7bb;
+}
+
+.cart-infor-item{
+    padding: 10px 10%;
+    
+}
+
+.cart-infor-input{
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #f4a7bb !important;
+    border: 1px solid #f4a7bb !important;
+    border-radius: 3px;
+    background-color: transparent !important;
+    padding: 4px 8px;
+    margin: 8px 0;
+}
+
+.cart-infor-input::placeholder{
+    color: #68595e;
+}
+
+.cart-btn-wrap{
+    text-align: center;
+    margin-top: 24px;
+}
+
+.cart-btn{
+    
+    border: 1px solid #f4a7bb;
+    background-color: transparent;
+    padding: 8px 10px;
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+.cart-btn:hover {
+    background-color: #f4a7bb;
+    color: black;
+}

@@ -1,0 +1,101 @@
+.wrapper{
+    background-color: black;
+   min-height: 609px;
+   overflow: hidden;
+}
+
+.list-book{
+    margin-top: 14px !important;
+    margin: 0 -4px;
+    padding: 0 44px;
+}
+
+.list-book-col{
+    width: 20% !important;
+    margin: 20px 0;
+    
+}
+
+.list-book-item{
+    width: 100%;
+    min-width: 100%;
+    border: 2px solid #f4a7bb;
+    border-radius: 5px;
+    overflow: hidden;
+
+    
+   cursor: pointer;
+}
+
+.list-book-item:hover{
+    background-color: #f4a7bb;
+   
+}
+
+.list-book-item:hover .list-book-item-name{
+   
+    color: black;
+
+}
+
+.list-book-item:hover .list-book-item-author{
+   
+    color: black;
+
+}
+
+
+
+.list-book-img-wrap{
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f4a7bb;
+    background-color: #f4a7bb;
+    margin: -1px 0 0 -1px;
+    height: 290px;
+}
+
+.list-book-img-wrapper{
+    width: 80%;
+    text-align: center;
+}
+
+.list-book-img{
+    height: 100%;
+    border-radius: 8px;
+}
+
+.title{
+    margin: 20px 0;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #f4a7bb;
+}
+
+.list-book-item-name{
+    padding: 8px 4px 0 4px;
+    color: #f4a7bb;
+    font-size: 1rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-book-item-author{
+    color: #f4a7bb;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-book-link{
+    text-decoration: none;
+    
+}
+

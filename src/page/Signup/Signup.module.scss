@@ -1,0 +1,110 @@
+* {
+    
+    ::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+    }
+    
+}
+
+.wrapper {
+   width: 100%;
+   height: 100%;
+   padding: 110px 0;
+   display: flex;
+   justify-content: center;
+   background-color: black;
+   min-height: 609px;
+}
+
+.login {
+     width: 50%;
+    padding: 20px;
+    border: 1px solid #f4a7bb;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.btn-wrap{
+    display: flex;
+    justify-content: space-around;
+}
+
+.signup-button{
+    width: 40%;
+    padding: 8px 10px;
+    background-color: transparent;
+    border: 1px solid #f4a7bb !important;
+    color: #f4a7bb;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+}
+
+.signup-button:hover{
+    background-color: #f4a7bb;
+    color: black;
+    
+}
+
+.title {
+    color: #f4a7bb;
+    font-size: 2.1rem;
+}
+
+.input-text{
+  
+    width: 100% !important;
+    color: aliceblue !important;
+    padding:10px 10px !important;
+    border: 1px solid #f4a7bb !important;
+    border-radius: 3px !important;
+    background-color: transparent !important;
+}
+
+.label-text {
+    color: #f4a7bb;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.row-input {
+    width: 100%;
+    margin-top: 14px;
+}
+
+.btn {
+    margin-top: 14px;
+    padding: 8px 10px;
+    width: 25%;
+    border: 1px solid #f4a7bb;
+    border-radius: 2px;
+    background-color: transparent;
+    color: #f4a7bb;
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: black ;
+    background-color: #f4a7bb ;
+    border: 1px solid #f4a7bb ;
+}
+
+.login-footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.footer-text{
+    color: aliceblue;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.footer-text:hover{
+    color: #f4a7bb;
+}
